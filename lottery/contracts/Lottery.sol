@@ -18,7 +18,7 @@ contract Lottery{
         return uint(keccak256(block.difficulty, now , players));
     }
     
-    function pickwinner() public restricted {
+    function pickWinner() public restricted {
         uint index = random() % players.length;
         players[index].transfer(this.balance);
         players = new address[](0);
